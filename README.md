@@ -3,4 +3,4 @@ A mobile card match game
 
 Built for fun.
 
-Used official documentation, stack overflow, youtube, several tutorials while building the game.
+Used official documentation, stack overflow, youtube, google, many iOS development tutorials/courses while building the game, forums
