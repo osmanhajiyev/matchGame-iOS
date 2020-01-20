@@ -4,6 +4,8 @@ A mobile card match game
 Built for fun.
 
 ![NoCardsAreMatching](NoCardsAreMacthed.PNG)
+![ScreenshotWhenSomeCardsAreMatched](ScreenshotWhenSomeCardsAreMatched.PNG)
+![ScreenshotWhenUserWon](ScreenshotWhenUserWon.PNG)
 
 Used official documentation, stack overflow, youtube, google, many iOS development tutorials/courses while building the game, forums
 
