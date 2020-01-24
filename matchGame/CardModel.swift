@@ -12,35 +12,40 @@ class CardModel {
 
     func getCards() -> [Card] {
 
+        // Declare an array to store numbers we have already generated
+        var generatedNumbersArray = [Int]()
+
         // Declare an array to store the generated cards
         var generatedCardsArray = [Card]()
 
         // Randomly generate pairs of cards
-        for _ in 0...9 {
+        while generatedNumbersArray.count < 11 {
 
             // Get a random number
             let randomNumber = arc4random_uniform(13) + 1
 
-            print(randomNumber)
+            if generatedNumbersArray.contains(Int(randomNumber)) == false {
 
-            // Create the first card object
-            let cardOne = Card()
-            cardOne.imageName = "card\(randomNumber)"
+                // print the number
+                print(randomNumber)
 
-            generatedCardsArray.append(cardOne)
+                // Store the number into the generated NumbersArray
+                generatedNumbersArray.append(Int(randomNumber))
 
-            // Create the second card object
-            let cardTwo = Card()
-            cardTwo.imageName = "card\(randomNumber)"
+                //Create the first card object
+                let cardOne = Card()
+                cardOne.imageName = "card\(randomNumber)"
 
-            generatedCardsArray.append(cardTwo)
+                generatedCardsArray.append(cardOne)
 
-            // Optional: Make it so we only have unique pairs. Random number may generate
-            // the same number
+                // Create the second card object
+                let cardTwo = Card()
+                cardTwo.imageName = "card\(randomNumber)"
 
+                generatedCardsArray.append(cardTwo)
+            }
         }
 
-        // TODO: Randomize the array
 
         // Return the array
 

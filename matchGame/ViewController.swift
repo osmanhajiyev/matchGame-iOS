@@ -84,7 +84,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        // Get a CardCollectionViewCell Object
+        // Get a CardCollectionViewCell Object 
         let cell =
             collectionView.dequeueReusableCell(withReuseIdentifier:
                 "CardCell", for: indexPath) as! CardCollectionViewCell
@@ -223,7 +223,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 return
             }
 
-            title = "GAME OVER HAHAHA"
+            title = "GAME OVER!"
             message = "RIP"
 
         }

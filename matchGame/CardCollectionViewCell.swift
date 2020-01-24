@@ -22,6 +22,14 @@ class CardCollectionViewCell: UICollectionViewCell {
         self.card = card
         frontImageView.image = UIImage(named: card.imageName)
 
+        if card.isMatched == true {
+            backImageView.alpha = 0
+            frontImageView.alpha = 0
+        } else {
+            backImageView.alpha = 1
+            frontImageView.alpha = 1
+        }
+
         // Determine if the card in in a flipped up state or flipped down state
         if(card.isFlipped == true){
             // Make sure the front image is on top
