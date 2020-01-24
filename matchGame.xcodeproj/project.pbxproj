@@ -16,10 +16,10 @@
 		AC1871B823D545500002DAD7 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1871B723D545500002DAD7 /* CardModel.swift */; };
 		AC1871BA23D549780002DAD7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1871B923D549780002DAD7 /* Card.swift */; };
 		AC1871BC23D54D520002DAD7 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1871BB23D54D520002DAD7 /* CardCollectionViewCell.swift */; };
-		AC763B5C23DAD37C00943924 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC763B5823DAD37C00943924 /* cardflip.wav */; };
-		AC763B5D23DAD37C00943924 /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC763B5923DAD37C00943924 /* dingwrong.wav */; };
-		AC763B5E23DAD37C00943924 /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC763B5A23DAD37C00943924 /* dingcorrect.wav */; };
-		AC763B5F23DAD37C00943924 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC763B5B23DAD37C00943924 /* shuffle.wav */; };
+		AC763B5C23DAD37C00943924 /* flip.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC763B5823DAD37C00943924 /* flip.wav */; };
+		AC763B5D23DAD37C00943924 /* wrongsound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC763B5923DAD37C00943924 /* wrongsound.wav */; };
+		AC763B5E23DAD37C00943924 /* correctsound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC763B5A23DAD37C00943924 /* correctsound.wav */; };
+		AC763B5F23DAD37C00943924 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC763B5B23DAD37C00943924 /* start.wav */; };
 		AC763B6223DAD3CE00943924 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC763B6123DAD3CE00943924 /* AVFoundation.framework */; };
 		AC763B6423DAD43E00943924 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC763B6323DAD43E00943924 /* SoundManager.swift */; };
 /* End PBXBuildFile section */
@@ -36,10 +36,10 @@
 		AC1871B723D545500002DAD7 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		AC1871B923D549780002DAD7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		AC1871BB23D54D520002DAD7 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
-		AC763B5823DAD37C00943924 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
-		AC763B5923DAD37C00943924 /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
-		AC763B5A23DAD37C00943924 /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
-		AC763B5B23DAD37C00943924 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
+		AC763B5823DAD37C00943924 /* flip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flip.wav; sourceTree = "<group>"; };
+		AC763B5923DAD37C00943924 /* wrongsound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrongsound.wav; sourceTree = "<group>"; };
+		AC763B5A23DAD37C00943924 /* correctsound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctsound.wav; sourceTree = "<group>"; };
+		AC763B5B23DAD37C00943924 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
 		AC763B6123DAD3CE00943924 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AC763B6323DAD43E00943924 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,10 +95,10 @@
 		AC763B5723DAD31700943924 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				AC763B5823DAD37C00943924 /* cardflip.wav */,
-				AC763B5A23DAD37C00943924 /* dingcorrect.wav */,
-				AC763B5923DAD37C00943924 /* dingwrong.wav */,
-				AC763B5B23DAD37C00943924 /* shuffle.wav */,
+				AC763B5823DAD37C00943924 /* flip.wav */,
+				AC763B5A23DAD37C00943924 /* correctsound.wav */,
+				AC763B5923DAD37C00943924 /* wrongsound.wav */,
+				AC763B5B23DAD37C00943924 /* start.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -170,12 +170,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC1871B023D537630002DAD7 /* LaunchScreen.storyboard in Resources */,
-				AC763B5D23DAD37C00943924 /* dingwrong.wav in Resources */,
-				AC763B5C23DAD37C00943924 /* cardflip.wav in Resources */,
-				AC763B5F23DAD37C00943924 /* shuffle.wav in Resources */,
+				AC763B5D23DAD37C00943924 /* wrongsound.wav in Resources */,
+				AC763B5C23DAD37C00943924 /* flip.wav in Resources */,
+				AC763B5F23DAD37C00943924 /* start.wav in Resources */,
 				AC1871AD23D537630002DAD7 /* Assets.xcassets in Resources */,
 				AC1871AB23D537610002DAD7 /* Main.storyboard in Resources */,
-				AC763B5E23DAD37C00943924 /* dingcorrect.wav in Resources */,
+				AC763B5E23DAD37C00943924 /* correctsound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

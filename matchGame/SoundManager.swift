@@ -31,16 +31,16 @@ class SoundManager {
         switch effect {
 
         case.flip:
-            soundFilename = "cardflip"
+            soundFilename = "flip"
 
         case .shuffle:
-            soundFilename = "shuffle"
+            soundFilename = "start"
 
         case .match:
-            soundFilename = "dingcorrect"
+            soundFilename = "correctsound"
 
         case .nomatch:
-            soundFilename = "dingwrong"
+            soundFilename = "wrongsound"
         }
 
         // Get the path to the sound file inside the bundle
