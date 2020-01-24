@@ -12,6 +12,7 @@ class CardModel {
 
     func getCards() -> [Card] {
 
+        
         // Declare an array to store numbers we have already generated
         var generatedNumbersArray = [Int]()
 

@@ -44,6 +44,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+
+        SoundManager.playSound(.shuffle)
+    }
+
     // MARK: - Timer Methods
 
     @objc func timerElapsed() {
@@ -114,6 +119,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if card.isFlipped == false {
             // Flip the card
             cell.flip()
+
+            // Play the sound
+            SoundManager.playSound(.flip)
+
+
+
             card.isFlipped = true
 
             if firstFlippedCardIndex == nil
@@ -161,6 +172,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if cardOne.imageName == cardTwo.imageName {
             // It is a match
 
+            // Play sound
+            SoundManager.playSound(.match)
+
             // Set the statuses of the cards
             cardOne.isMatched = true
             cardTwo.isMatched = true
@@ -176,6 +190,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         else {
             // Not a match
+
+            // Play sound
+            SoundManager.playSound(.nomatch)
 
             // Set the statuses of the cards
             cardOne.isFlipped = false
