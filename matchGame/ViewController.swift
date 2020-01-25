@@ -41,7 +41,32 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Create timer
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
+        collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
 
+        scoreLabel.textColor = UIColor.white
+        timerLabel.textColor = UIColor.white
+
+    }
+
+
+    @IBAction func restart(_ sender: Any) {
+        cardArray = model.getCards()
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
+
+        score = 0
+        scoreLabel.text = "Score: \(score)"
+        milliseconds = 10 * 10000
+        firstFlippedCardIndex = nil
+
+        // Create timer
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+        timerLabel.textColor = UIColor.white
+
+        collectionView.reloadData()
     }
 
     override func viewDidAppear(_ animated: Bool) {

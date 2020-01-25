@@ -37,10 +37,14 @@ class CardModel {
                 let cardOne = Card()
                 cardOne.imageName = "card\(randomNumber)"
 
+                cardOne.isMatched = false
+                cardOne.isFlipped = false
                 generatedCardsArray.append(cardOne)
 
                 // Create the second card object
                 let cardTwo = Card()
+                cardTwo.isMatched = false
+                cardTwo.isFlipped = false
                 cardTwo.imageName = "card\(randomNumber)"
 
                 generatedCardsArray.append(cardTwo)

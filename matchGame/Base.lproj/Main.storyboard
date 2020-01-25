@@ -21,24 +21,53 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b1n-i5-VEn">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koh-DQ-8ww">
-                                        <rect key="frame" x="301.5" y="0.0" width="64" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cw7-XZ-hej">
-                                        <rect key="frame" x="238.5" y="20.5" width="190" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9yp-SL-ngc">
+                                        <rect key="frame" x="131.5" y="0.0" width="404" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koh-DQ-8ww">
+                                                <rect key="frame" x="0.0" y="5" width="64" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cw7-XZ-hej">
+                                                <rect key="frame" x="114" y="0.0" width="190" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="190" id="Cac-ev-Jgs"/>
+                                                    <constraint firstAttribute="height" constant="30" id="eCZ-cB-qpq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdx-7j-g4y">
+                                                <rect key="frame" x="354" y="5" width="50" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Wre-Eh-ezI"/>
+                                                    <constraint firstAttribute="height" constant="20" id="wfn-P5-G4P"/>
+                                                </constraints>
+                                                <size key="titleShadowOffset" width="19" height="5"/>
+                                                <state key="normal" title="Refresh" image="reset">
+                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pOv-0y-GTR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="190" id="Cac-ev-Jgs"/>
-                                            <constraint firstAttribute="height" constant="30" id="eCZ-cB-qpq"/>
+                                            <constraint firstItem="Cw7-XZ-hej" firstAttribute="leading" secondItem="koh-DQ-8ww" secondAttribute="trailing" constant="40" id="4e9-bf-14O"/>
+                                            <constraint firstItem="Cw7-XZ-hej" firstAttribute="leading" secondItem="koh-DQ-8ww" secondAttribute="trailing" constant="20" id="OG0-ld-Wjw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="4e9-bf-14O"/>
+                                                <exclude reference="OG0-ld-Wjw"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tle-ep-srs">
-                                        <rect key="frame" x="0.0" y="50.5" width="667" height="324.5"/>
+                                        <rect key="frame" x="0.0" y="30" width="667" height="345"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x3f-CV-7xW">
                                             <size key="itemSize" width="158" height="224"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -106,7 +135,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="900" height="1164"/>
-        <image name="background" width="736" height="414"/>
+        <image name="back" width="897" height="1497"/>
+        <image name="background" width="1920" height="1080"/>
+        <image name="reset" width="358" height="141"/>
     </resources>
 </document>
