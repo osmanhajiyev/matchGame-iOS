@@ -8,10 +8,11 @@ Built for fun.
 ![ScreenshotWhenUserWon](ScreenshotWhenUserWon.PNG)
 ![gameplay](gameplay.PNG)
 
-Extra features:
+Some features:
 - Sounds
-- Restart game button
+- Restart game button/reshuffle
 - Timer
+- Score
 
 Used official documentation, stack overflow, youtube, google, many iOS development tutorials/courses while building the game, forums
 
