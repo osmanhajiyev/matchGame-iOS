@@ -10,7 +10,7 @@ import Foundation
 
 class CardModel {
 
-    func getCards() -> [Card] {
+    func getCards(_ num: Int) -> [Card] {
 
         
         // Declare an array to store numbers we have already generated
@@ -20,10 +20,10 @@ class CardModel {
         var generatedCardsArray = [Card]()
 
         // Randomly generate pairs of cards
-        while generatedNumbersArray.count < 11 {
+        while generatedNumbersArray.count < num {
 
             // Get a random number
-            let randomNumber = arc4random_uniform(13) + 1
+            let randomNumber = arc4random_uniform(48) + 1
 
             if generatedNumbersArray.contains(Int(randomNumber)) == false {
 

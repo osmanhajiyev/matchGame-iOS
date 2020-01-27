@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
 
 
     @IBOutlet weak var timerLabel: UILabel!
@@ -21,6 +21,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var model = CardModel()
     var cardArray = [Card]()
 
+    let gridSizeList = [10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]
+    var gridSize = 10
+
+    @IBOutlet weak var pickerView: UIPickerView!
+
     var score = 0
 
     var firstFlippedCardIndex:IndexPath?
@@ -32,11 +37,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
+        //alertWithTF()
+
         // Call the getCards method of the card model
-        cardArray = model.getCards()
+        cardArray = model.getCards(gridSize)
 
         collectionView.delegate = self
         collectionView.dataSource = self
+
+        //pickerview code
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
 
         // Create timer
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
@@ -48,9 +59,32 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     }
 
+    // picker view functions below
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return gridSizeList.count
+    }
+
+    /*
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(gridSizeList[row])
+    }*/
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: "Grid Size: \(gridSizeList[row])", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        return attributedString
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        gridSize = gridSizeList[row]
+    }
+
 
     @IBAction func restart(_ sender: Any) {
-        cardArray = model.getCards()
+        //alertWithTF()
+        cardArray = model.getCards(gridSize)
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -283,6 +317,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         present(alert, animated: true, completion: nil)
     }
+
+    /*
+    func alertWithTF() {
+        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter text:"
+            textField.isSecureTextEntry = true // for password input
+        })
+        self.present(alert, animated: true, completion: nil)
+
+    }*/
 
 }
 
