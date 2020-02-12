@@ -10,9 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
 
-
     @IBOutlet weak var timerLabel: UILabel!
-
 
     @IBOutlet weak var scoreLabel: UILabel!
 
@@ -83,6 +81,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
 
     @IBAction func restart(_ sender: Any) {
+        restartGame()
+    }
+    
+    ///Function to restart game
+    func restartGame() {
         //alertWithTF()
         cardArray = model.getCards(gridSize)
 
@@ -121,7 +124,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         // When the timer has reached 0..
         if milliseconds <= 0 {
-
 
             // Stop the timer
             timer?.invalidate()
@@ -182,8 +184,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             // Play the sound
             SoundManager.playSound(.flip)
 
-
-
             card.isFlipped = true
 
             if firstFlippedCardIndex == nil
@@ -198,8 +198,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 checkForMatches(indexPath)
             }
 
-
-            
         }
             /*
         else {
@@ -208,13 +206,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             card.isFlipped = false 
          }*/ // we dont need this part anymore
 
-
-
     }
 
     // Mark: - Game logic methods
-
-
 
     func checkForMatches(_ secondFlippedCardIndex:IndexPath){
 
@@ -278,10 +272,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 break
             }
         }
-
+        
+        //check new score
+        compareScore(score: score)
+        
         // Messaging variables
         var title = ""
-        var message = ""
+        //var message = ""
 
         // If not, then user has won, stop the timer
         if isWon == true {
@@ -290,8 +287,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 timer?.invalidate()
             }
 
-            title = "Congratulations!"
-            message = "YOU HAVE WON!!!"
+            title = "Congratulations, YOU HAVE WON!!!"
+            //message = "YOU HAVE WON!!!"
         }
         else {
             // If there are unmatched cards, check if there is any time left
@@ -299,21 +296,37 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 return
             }
 
-            title = "GAME OVER!"
-            message = "RIP"
+            title = "GAME OVER! RIP..."
+            //message = "RIP"
 
         }
+        
         // Show if won or lost
-        showAlert(title, message )
+        showAlert(title) //message )
 
     }
 
-    func showAlert(_ title:String, _ message:String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    func showAlert(_ title:String) { //_ message:String
+        let bestScore = UserDefaults.standard.integer(forKey: "bestScore")
+        
+        let alert = UIAlertController(title: title, message: "Score:\(score)  Best Score:\(bestScore)", preferredStyle: .alert)
+        
+        //go back to title screen
+        let home = UIAlertAction(title: "Home", style: UIAlertAction.Style.default, handler: {(_) in
+            self.performSegue(withIdentifier: "ToTitle", sender: self)
+        })
+        
+        //restart game
+        let restart = UIAlertAction(title: "Restart", style: UIAlertAction.Style.default, handler: {(_) in
+            self.restartGame()
+        })
+        
+        alert.addAction(home)
+        alert.addAction(restart)
 
-        let alertAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        //let alertAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
 
-        alert.addAction(alertAction)
+        //alert.addAction(alertAction)
 
         present(alert, animated: true, completion: nil)
     }

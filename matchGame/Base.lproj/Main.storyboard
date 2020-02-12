@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wg7-iD-v21">
+    <device id="retina5_9" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,22 +10,22 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="matchGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="matchGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="1oT-d6-pk3">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b1n-i5-VEn">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="44" y="0.0" width="724" height="354"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="494" placeholderIntrinsicHeight="90" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9yp-SL-ngc">
-                                        <rect key="frame" x="26.5" y="0.0" width="614" height="90"/>
+                                        <rect key="frame" x="55" y="0.0" width="614" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koh-DQ-8ww">
-                                                <rect key="frame" x="0.0" y="35" width="64" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="35" width="64" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -75,7 +75,7 @@
                                         </variation>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tle-ep-srs">
-                                        <rect key="frame" x="0.0" y="90" width="667" height="285"/>
+                                        <rect key="frame" x="0.0" y="90" width="724" height="264"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x3f-CV-7xW">
                                             <size key="itemSize" width="120" height="168"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -132,16 +132,84 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Rq8-Yp-fIK"/>
                     <connections>
                         <outlet property="collectionView" destination="Tle-ep-srs" id="INf-dZ-Q9M"/>
                         <outlet property="pickerView" destination="GRH-gx-zhp" id="Nv0-ty-Yfh"/>
                         <outlet property="scoreLabel" destination="koh-DQ-8ww" id="p13-KV-wfh"/>
                         <outlet property="timerLabel" destination="Cw7-XZ-hej" id="SMa-jQ-8pz"/>
+                        <segue destination="Wg7-iD-v21" kind="show" identifier="ToTitle" id="hbP-ZZ-ePs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.98050974512745" y="128.80000000000001"/>
+            <point key="canvasLocation" x="938" y="-727"/>
+        </scene>
+        <!--Title View Controller-->
+        <scene sceneID="4Dl-jU-zmO">
+            <objects>
+                <viewController id="Wg7-iD-v21" customClass="TitleViewController" customModule="matchGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QZ1-ba-vcg">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="cob-FI-BDl">
+                                <rect key="frame" x="44" y="0.0" width="724" height="354"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pis-8u-o79">
+                                <rect key="frame" x="319.66666666666669" y="159" width="173" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90D-a9-w1u">
+                                <rect key="frame" x="379.66666666666669" y="232" width="53" height="42"/>
+                                <color key="backgroundColor" red="1" green="0.76478740478110063" blue="0.067424592708034581" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameStart:" destination="Wg7-iD-v21" eventType="touchUpInside" id="kEC-d9-TBt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="match Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReL-tN-vuu">
+                                <rect key="frame" x="215" y="72" width="382" height="62"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ReL-tN-vuu" firstAttribute="centerX" secondItem="pis-8u-o79" secondAttribute="centerX" id="Dl7-jB-qBl"/>
+                            <constraint firstItem="cob-FI-BDl" firstAttribute="centerX" secondItem="QZ1-ba-vcg" secondAttribute="centerX" id="FNK-KZ-viJ"/>
+                            <constraint firstItem="ReL-tN-vuu" firstAttribute="centerX" secondItem="QZ1-ba-vcg" secondAttribute="centerX" id="Fmd-T3-FjS"/>
+                            <constraint firstItem="cob-FI-BDl" firstAttribute="centerY" secondItem="pis-8u-o79" secondAttribute="centerY" id="GWK-1r-aTD"/>
+                            <constraint firstItem="cob-FI-BDl" firstAttribute="leading" secondItem="YOo-NK-KkT" secondAttribute="leading" id="K9y-l8-zJB"/>
+                            <constraint firstItem="90D-a9-w1u" firstAttribute="centerX" secondItem="QZ1-ba-vcg" secondAttribute="centerX" id="Nk0-MW-t30"/>
+                            <constraint firstItem="cob-FI-BDl" firstAttribute="bottom" secondItem="YOo-NK-KkT" secondAttribute="bottom" id="P6M-0X-de3"/>
+                            <constraint firstItem="90D-a9-w1u" firstAttribute="top" secondItem="pis-8u-o79" secondAttribute="bottom" constant="37" id="PtZ-VO-lfu"/>
+                            <constraint firstItem="pis-8u-o79" firstAttribute="centerX" secondItem="QZ1-ba-vcg" secondAttribute="centerX" id="Qo3-Yf-tQT"/>
+                            <constraint firstItem="pis-8u-o79" firstAttribute="top" secondItem="ReL-tN-vuu" secondAttribute="bottom" constant="25" id="U5w-qB-NCj"/>
+                            <constraint firstItem="cob-FI-BDl" firstAttribute="centerX" secondItem="90D-a9-w1u" secondAttribute="centerX" id="UJP-Mt-AR4"/>
+                            <constraint firstItem="ReL-tN-vuu" firstAttribute="leading" secondItem="YOo-NK-KkT" secondAttribute="leading" constant="171" id="UjO-8g-HCJ"/>
+                            <constraint firstItem="90D-a9-w1u" firstAttribute="centerX" secondItem="pis-8u-o79" secondAttribute="centerX" id="UtR-cn-IbO"/>
+                            <constraint firstItem="ReL-tN-vuu" firstAttribute="top" secondItem="YOo-NK-KkT" secondAttribute="top" constant="72" id="blA-J2-eEQ"/>
+                            <constraint firstItem="cob-FI-BDl" firstAttribute="centerX" secondItem="QZ1-ba-vcg" secondAttribute="centerX" id="oaJ-xe-lPl"/>
+                            <constraint firstItem="cob-FI-BDl" firstAttribute="top" secondItem="YOo-NK-KkT" secondAttribute="top" id="uEn-Jz-PJt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YOo-NK-KkT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YRc-TA-LLF"/>
+                    <connections>
+                        <outlet property="highScoreLabel" destination="pis-8u-o79" id="PWW-jK-fq8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ToGame" id="iJ3-NJ-VJH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0v-b4-kva" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.91625615763547" y="-727.20000000000005"/>
         </scene>
     </scenes>
     <resources>
